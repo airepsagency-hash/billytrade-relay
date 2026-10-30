@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: billytrade-relay
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: node server.mjs
+    healthCheckPath: /health
+    envVars:
+      - key: RELAY_TOKEN
+        sync: false
